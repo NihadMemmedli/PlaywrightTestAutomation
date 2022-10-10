@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Amazon Simple Regression Suite" thread-count="5"
+	parallel="tests" verbose="4">
+
+	<listeners>
+		<listener
+			class-name="com.qa.amazon.listeners.ExtentReportListener" />
+
+	</listeners>
+
+<!--	<test name="Amazon.in Home Page Test_chrome">-->
+<!--		<parameter name="browser" value="chrome" />-->
+<!--		<classes>-->
+<!--			<class name="com.qa.amazon.tests.HomePageTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
+
+
+	<test name="Amazon.in Home Page Test_chromium">
+		<parameter name="browser" value="chromium" />
+		<classes>
+			<class name="com.qa.amazon.tests.HomePageTest" />
+		</classes>
+	</test>
+
+
+
+
+</suite>
