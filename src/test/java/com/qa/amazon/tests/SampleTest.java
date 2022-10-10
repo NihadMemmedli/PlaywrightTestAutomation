@@ -10,7 +10,7 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 import static com.qa.amazon.constants.AppConstants.HIGH_TO_LOW;
 import static com.qa.amazon.constants.AppConstants.TV_APPLIANCES_ELECTRONICS;
 
-public class HomePageTest extends BaseTest {
+public class SampleTest extends BaseTest {
 
 	@Test()
 	public void searchTest() throws InterruptedException {

@@ -26,7 +26,7 @@ public class HomePage {
 		}
 	}
 	public CategoriesPage clickHMenuItem(String menuItem){
-		page.locator(("text="+menuItem)).click();
+		page.locator(("text="+menuItem)).click(new Locator.ClickOptions().setDelay(10));
 		return new CategoriesPage(page);
 	}
 
