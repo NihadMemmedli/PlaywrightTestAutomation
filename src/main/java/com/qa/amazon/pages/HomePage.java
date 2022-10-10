@@ -14,17 +14,18 @@ public class HomePage {
 
 	// 3. Page action/methods
 	public void openHamburgerMenu() throws InterruptedException {
-		page.click(openMenu);
 		int counter = 0;
-		Thread.sleep(250);
+		page.locator(openMenu).dblclick();
+		Thread.sleep(250); // sometimes menu does not open on time
 		while(!page.locator("div#hmenu-customer-name").isVisible() && counter < 5){
-			page.click(openMenu);
+			if(page.locator(openMenu).isVisible()){
+				page.locator(openMenu).dblclick();
+			}
 			Thread.sleep(200);
 			counter++;
 		}
 	}
 	public CategoriesPage clickHMenuItem(String menuItem){
-//		page.locator("a:text('${x}')".replace("${x}", menuItem)).click();
 		page.locator(("text="+menuItem)).click();
 		return new CategoriesPage(page);
 	}

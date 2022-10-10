@@ -19,7 +19,7 @@ public class PlaywrightFactory {
      */
     private static ThreadLocal<Browser> tlBrowser = new ThreadLocal<>(); // will return local copy of browser
     private static ThreadLocal<BrowserContext> tlBrowserContext = new ThreadLocal<>();
-    private static ThreadLocal<Page> tlPage = new ThreadLocal<>();
+    private static ThreadLocal<Page> tlPage = new ThreadLocal<>(); // will return local copy of page
     private static ThreadLocal<Playwright> tlPlaywright = new ThreadLocal<>();
 
     public static Playwright getPlaywright() {
@@ -28,7 +28,7 @@ public class PlaywrightFactory {
 
     public static Browser getBrowser() {
         return tlBrowser.get();
-    }
+    } // we will get browser through this method
 
     public static BrowserContext getBrowserContext() {
         return tlBrowserContext.get();
@@ -36,7 +36,7 @@ public class PlaywrightFactory {
 
     public static Page getPage() {
         return tlPage.get();
-    }
+    } // we will get page through this method
 
     public Page initBrowser(Properties prop) {
 
@@ -47,7 +47,7 @@ public class PlaywrightFactory {
 
         switch (browserName.toLowerCase()) {
             case "chromium":
-                tlBrowser.set(getPlaywright().chromium().launch(new LaunchOptions()));
+                tlBrowser.set(getPlaywright().chromium().launch(new LaunchOptions())); // all browsers default is headless mode
                 break;
             case "firefox":
                 tlBrowser.set(getPlaywright().firefox().launch(new LaunchOptions().setHeadless(false)));
