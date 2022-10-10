@@ -17,7 +17,6 @@ public class HomePage {
 	public void openHamburgerMenu() throws InterruptedException {
 		int counter = 0;
 		page.locator(openMenu).click(new Locator.ClickOptions().setDelay(10).setForce(true));
-//		Thread.sleep(50); // sometimes menu does not open on time
 		while(!page.locator("div#hmenu-customer-name").isVisible() && counter < 5){
 			if(page.locator(openMenu).isVisible()){
 				page.locator(openMenu).click(new Locator.ClickOptions().setDelay(10).setForce(true));
