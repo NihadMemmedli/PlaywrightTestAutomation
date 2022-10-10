@@ -15,11 +15,12 @@ public class HomePage {
 
 	// 3. Page action/methods
 	public void openHamburgerMenu() throws InterruptedException {
+		Locator openMenuLocator = page.locator(openMenu);
 		int counter = 0;
-		page.locator(openMenu).click(new Locator.ClickOptions().setDelay(10).setForce(true));
-		while(!page.locator("div#hmenu-customer-name").isVisible() && counter < 5){
-			if(page.locator(openMenu).isVisible()){
-				page.locator(openMenu).click(new Locator.ClickOptions().setDelay(10).setForce(true));
+		openMenuLocator.click(new Locator.ClickOptions().setDelay(10).setForce(true));
+		while(openMenuLocator.isVisible() && counter < 5){
+			if(openMenuLocator.isVisible()){ // double check in order to verify event conflict which leads to flaky test
+				openMenuLocator.click(new Locator.ClickOptions().setDelay(10).setForce(true));
 			}
 			Thread.sleep(200);
 			counter++;
