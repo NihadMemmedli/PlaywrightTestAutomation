@@ -22,7 +22,7 @@ public class ResultsPage {
 
         while (!elem.isVisible() && counter < 10){
             // sometimes from first click, dropdown menu does not appear for doing sorting operation
-            page.locator(sortBy).click();
+            page.locator(sortBy).click(new Locator.ClickOptions().setDelay(10));
             counter++;
             Thread.sleep(100);
         }
