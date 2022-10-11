@@ -10,26 +10,17 @@ To run project locally
 
 ```bash
   git clone https://github.com/NihadMemmedli/PlaywrightTestAutomation.git
-  PLAYWRIGHT_JAVA_SRC=./src/test/java mvn clean test
+  PLAYWRIGHT_JAVA_SRC=./src/test/java mvn test
 ```
 
 Pre-requisite to run with selenium-grid: `SE_NODE_GRID_URL="http://<selenium-hub-ip>:4444/wd/hub"` 
 environment variable pointing to the hub when running selenium node
 Example can be found in the `docker-compose.yml` file
 
-To run selenium grid infrastructure on local:
+To run selenium grid infrastructure and run tests on parallel chrome and chromium:
 
 ```bash
   docker-compose up
-```
-To run project with selenium-grid
-Template:
-```bash
-  PLAYWRIGHT_JAVA_SRC=./src/test/java SE_NODE_GRID_URL="<selenium-hub-ip>:4444/wd/hub" mvn clean test
-```
-Example:
-```bash
-  PLAYWRIGHT_JAVA_SRC=./src/test/java SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub mvn clean test
 ```
 
 To run project with dockerized environment
