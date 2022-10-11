@@ -10,14 +10,6 @@
 
 	</listeners>
 
-<!--	<test name="Amazon.in Home Page Test_chrome">-->
-<!--		<parameter name="browser" value="chrome" />-->
-<!--		<classes>-->
-<!--			<class name="com.qa.amazon.tests.SampleTest" />-->
-<!--		</classes>-->
-<!--	</test>-->
-
-
 	<test name="Amazon.in Home Page Test_chromium">
 		<parameter name="browser" value="chromium" />
 		<classes>
@@ -25,6 +17,12 @@
 		</classes>
 	</test>
 
+	<test name="Amazon.in Home Page Test_chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.amazon.tests.SampleTest" />
+		</classes>
+	</test>
 
 
 
