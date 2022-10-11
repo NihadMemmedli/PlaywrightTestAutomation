@@ -29,7 +29,7 @@ Template:
 ```
 Example:
 ```bash
-  PLAYWRIGHT_JAVA_SRC=./src/test/java SE_NODE_GRID_URL="localhost:4444/wd/hub" mvn clean test
+  PLAYWRIGHT_JAVA_SRC=./src/test/java SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub mvn clean test
 ```
 
 To run project with dockerized environment
